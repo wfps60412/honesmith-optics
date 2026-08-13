@@ -1,0 +1,708 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="description" content="Honesmith Optics complete user guide — camera controls, focus, metering, RAW/DNG, Focus Assist, Gallery, privacy and more." />
+  <title>Honesmith Optics — User Guide / 使用說明</title>
+  <style>
+    :root{
+      --bg:#11110f;
+      --panel:#191915;
+      --panel2:#202019;
+      --text:#f2eee2;
+      --muted:#bdb6a5;
+      --line:#3b392f;
+      --accent:#d8c28f;
+      --accent2:#f0dfb1;
+      --good:#cbd6b3;
+      --warn:#e1c38f;
+      --max:980px;
+      --radius:18px;
+    }
+    @media (prefers-color-scheme: light){
+      :root{
+        --bg:#f4f1e8;
+        --panel:#fffdf7;
+        --panel2:#eee9dc;
+        --text:#24231f;
+        --muted:#6d685d;
+        --line:#d7d0bf;
+        --accent:#806b3e;
+        --accent2:#614f2d;
+        --good:#53643d;
+        --warn:#8a6227;
+      }
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      background:var(--bg);
+      color:var(--text);
+      font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Noto Sans TC","PingFang TC","Helvetica Neue",Arial,sans-serif;
+      line-height:1.68;
+      letter-spacing:.01em;
+    }
+    a{color:var(--accent2);text-underline-offset:3px}
+    .wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
+    header{
+      border-bottom:1px solid var(--line);
+      background:linear-gradient(180deg,var(--panel),var(--bg));
+      padding:36px 0 28px;
+    }
+    .brand{font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent)}
+    h1{font-size:clamp(34px,7vw,60px);line-height:1.05;margin:.22em 0 .25em;letter-spacing:-.035em}
+    .lede{max-width:720px;color:var(--muted);font-size:17px}
+    .meta{margin-top:18px;font-size:13px;color:var(--muted)}
+    .toolbar{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+    button,.pill{
+      appearance:none;border:1px solid var(--line);background:var(--panel2);color:var(--text);
+      border-radius:999px;padding:9px 14px;font:inherit;font-size:14px;text-decoration:none;cursor:pointer
+    }
+    button.active{border-color:var(--accent);color:var(--accent2)}
+    nav{
+      position:sticky;top:0;z-index:10;
+      border-bottom:1px solid var(--line);
+      background:color-mix(in srgb,var(--bg) 92%, transparent);
+      backdrop-filter:blur(14px);
+    }
+    nav .wrap{display:flex;gap:8px;overflow:auto;padding-top:10px;padding-bottom:10px}
+    nav a{white-space:nowrap;text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:7px 11px;font-size:13px;color:var(--muted)}
+    nav a:hover{color:var(--text);border-color:var(--accent)}
+    main{padding:28px 0 64px}
+    section{scroll-margin-top:76px;margin:0 0 22px;padding:24px;border:1px solid var(--line);border-radius:var(--radius);background:var(--panel)}
+    h2{margin:0 0 10px;font-size:25px;letter-spacing:-.015em}
+    h3{margin:24px 0 8px;font-size:18px}
+    p{margin:8px 0 12px}
+    ul{padding-left:1.3em;margin:8px 0 14px}
+    li{margin:5px 0}
+    .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+    .card{border:1px solid var(--line);border-radius:14px;padding:15px;background:var(--panel2)}
+    .card strong{display:block;margin-bottom:4px}
+    .kbd{display:inline-block;border:1px solid var(--line);border-bottom-width:2px;border-radius:7px;padding:1px 7px;font-size:.9em;background:var(--panel2)}
+    .callout{border-left:3px solid var(--accent);padding:10px 14px;background:var(--panel2);border-radius:0 12px 12px 0;margin:14px 0}
+    .warning{border-left-color:var(--warn)}
+    .good{border-left-color:var(--good)}
+    .small{font-size:13px;color:var(--muted)}
+    .lang-en{display:none}
+    body.en .lang-zh{display:none}
+    body.en .lang-en{display:block}
+    body.en span.lang-en{display:inline}
+    body:not(.en) span.lang-zh{display:inline}
+    span.lang-en,span.lang-zh{display:none}
+    footer{border-top:1px solid var(--line);padding:28px 0 50px;color:var(--muted);font-size:13px}
+    @media(max-width:700px){
+      .grid{grid-template-columns:1fr}
+      section{padding:19px}
+      header{padding-top:28px}
+    }
+    @media print{
+      nav,.toolbar{display:none}
+      body,section,.card{background:#fff;color:#000}
+      section{break-inside:avoid;border-color:#bbb}
+      a{color:#000}
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="brand">Honesmith Studio</div>
+    <h1>Honesmith Optics</h1>
+
+    <div class="lang-zh">
+      <p class="lede">完整使用說明。涵蓋拍攝操作、手動控制、對焦與測光、Focus Assist、RAW／DNG、影片、圖庫、權限與隱私。</p>
+      <p class="meta">線上完整說明 · 2026-08 更新 · 本頁不代表 App Store 上架狀態；實際可用功能以你安裝的 App 版本、裝置能力與有效購買權益為準。</p>
+    </div>
+    <div class="lang-en">
+      <p class="lede">Complete user guide for camera controls, manual shooting, focus and metering, Focus Assist, RAW/DNG, video, Gallery, permissions, and privacy.</p>
+      <p class="meta">Online complete guide · Updated Aug 2026 · This page does not represent App Store release status. Actual availability follows your installed app version, device capability, and valid purchase entitlement.</p>
+    </div>
+
+    <div class="toolbar" aria-label="Language">
+      <button id="zhBtn" class="active" type="button" aria-pressed="true">繁體中文</button>
+      <button id="enBtn" type="button" aria-pressed="false">English</button>
+      <a class="pill" href="#quick"><span class="lang-zh">快速開始</span><span class="lang-en">Quick Start</span></a>
+    </div>
+  </div>
+</header>
+
+<nav>
+  <div class="wrap">
+    <a href="#quick"><span class="lang-zh">快速開始</span><span class="lang-en">Quick Start</span></a>
+    <a href="#camera"><span class="lang-zh">相機</span><span class="lang-en">Camera</span></a>
+    <a href="#focus"><span class="lang-zh">對焦／測光</span><span class="lang-en">Focus / Metering</span></a>
+    <a href="#raw">RAW / DNG</a>
+    <a href="#assist">Focus Assist</a>
+    <a href="#video"><span class="lang-zh">影片</span><span class="lang-en">Video</span></a>
+    <a href="#floating"><span class="lang-zh">浮動工具列</span><span class="lang-en">Floating Toolbar</span></a>
+    <a href="#memory"><span class="lang-zh">記憶</span><span class="lang-en">Memory</span></a>
+    <a href="#gallery"><span class="lang-zh">圖庫</span><span class="lang-en">Gallery</span></a>
+    <a href="#diagnostics"><span class="lang-zh">診斷</span><span class="lang-en">Diagnostics</span></a>
+    <a href="#tiers"><span class="lang-zh">版本功能</span><span class="lang-en">Tiers</span></a>
+    <a href="#privacy"><span class="lang-zh">隱私</span><span class="lang-en">Privacy</span></a>
+  </div>
+</nav>
+
+<main class="wrap">
+
+<section id="scope">
+  <div class="lang-zh">
+    <h2>先確認：說明頁不等於功能已上架</h2>
+    <p>這是一份可獨立更新的線上使用說明。它用來解釋 Honesmith Optics 的操作與功能契約，但<strong>不會改變 App 本身，也不代表某項功能已經在你目前安裝的版本或 App Store 上架版本中提供</strong>。</p>
+    <div class="callout warning">
+      若 App 內沒有顯示某個功能、購買項目或格式，請視為該版本目前不可用；不要只依這份網頁推定功能已解鎖或已發布。
+    </div>
+  </div>
+  <div class="lang-en">
+    <h2>First: documentation is not a release signal</h2>
+    <p>This guide can be updated independently from the app. It explains Honesmith Optics interactions and feature contracts, but <strong>it does not change the app and does not mean a feature is already available in your installed build or current App Store release</strong>.</p>
+    <div class="callout warning">
+      If a feature, purchase item, or format is not presented by the app, treat it as unavailable in that build. Do not infer release or entitlement from this web page alone.
+    </div>
+  </div>
+</section>
+
+<section id="quick">
+  <div class="lang-zh">
+    <h2>快速開始</h2>
+    <div class="grid">
+      <div class="card"><strong>短按取景畫面</strong>設定對焦點。</div>
+      <div class="card"><strong>長按取景畫面</strong>設定獨立曝光測光點；若目前為 Auto Metering，會進入 Spot。</div>
+      <div class="card"><strong>拖曳對焦標記</strong>上下拖曳可調整 EV 曝光補償。</div>
+      <div class="card"><strong>雙擊取景畫面</strong>開啟 2.2× 放大鏡，協助精細對焦。</div>
+      <div class="card"><strong>右側對焦輪</strong>在手動對焦時進行細部調整。</div>
+      <div class="card"><strong>音量鍵</strong>可作為拍照／錄影的硬體快門控制。</div>
+      <div class="card"><strong>浮動工具列</strong>可自訂常用操作；位置會記住，閒置後自動收合。</div>
+      <div class="card"><strong>Memory</strong>保存指定的五項照片設定；再次點選 active memory 可快速重設這五項。</div>
+      <div class="card"><strong>Gallery</strong>瀏覽照片／影片、縮放、播放、拖曳進度與使用系統刪除確認。</div>
+    </div>
+    <div class="callout good"><strong>對焦與測光是分開的。</strong>短按重新對焦，不會默默把你已設定的曝光測光點一起搬走。</div>
+  </div>
+  <div class="lang-en">
+    <h2>Quick Start</h2>
+    <div class="grid">
+      <div class="card"><strong>Tap the viewfinder</strong>Set the focus point.</div>
+      <div class="card"><strong>Long-press the viewfinder</strong>Place an independent exposure-metering point. Auto Metering switches to Spot when needed.</div>
+      <div class="card"><strong>Drag the focus reticle</strong>Drag vertically to adjust EV compensation.</div>
+      <div class="card"><strong>Double-tap the viewfinder</strong>Open the 2.2× loupe for fine focusing.</div>
+      <div class="card"><strong>Right-side focus wheel</strong>Fine-tune focus while using manual focus.</div>
+      <div class="card"><strong>Volume buttons</strong>Use the hardware volume buttons as photo/video capture controls.</div>
+      <div class="card"><strong>Floating Toolbar</strong>Customize common actions; its position is remembered and it collapses after inactivity.</div>
+      <div class="card"><strong>Memory</strong>Stores a defined five-value photo setup; tapping the active memory again quickly resets those five values.</div>
+      <div class="card"><strong>Gallery</strong>Browse photos/videos, zoom, play, scrub, and use the system-owned deletion confirmation.</div>
+    </div>
+    <div class="callout good"><strong>Focus and metering are independent.</strong>Refocusing does not silently move an exposure point you explicitly placed.</div>
+  </div>
+</section>
+
+<section id="camera">
+  <div class="lang-zh">
+    <h2>相機與手動控制</h2>
+    <h3>拍攝模式</h3>
+    <p>Honesmith Optics 保留 P／S／M 等手動拍攝控制。可用項目會依目前鏡頭、拍攝格式與裝置能力調整。</p>
+    <ul>
+      <li><strong>P：</strong>由相機協調曝光參數，適合快速拍攝。</li>
+      <li><strong>S：</strong>以快門時間為主要控制項，搭配可用的 ISO／曝光控制。</li>
+      <li><strong>M：</strong>以手動方式控制曝光組合。</li>
+      <li><strong>白平衡：</strong>可使用 Auto／Lock 與現有手動白平衡控制。</li>
+      <li><strong>實體鏡頭：</strong>鏡頭選擇依裝置實際提供的 camera capability；重新點選目前鏡頭可依既有操作回到 1.0× digital zoom。</li>
+    </ul>
+
+    <h3>構圖比例</h3>
+    <p>照片支援 4:3、16:9、1:1。取景畫面以實際構圖為準，不以拉伸影像假造比例。</p>
+
+    <h3>濾鏡</h3>
+    <p>內建 Original、B&amp;W、Silver。濾鏡是對已拍攝訊號的色調處理，不生成不存在的影像細節。</p>
+
+    <h3>頂部快捷與浮動控制</h3>
+    <p>比例、濾鏡、測光等常用項目可從相機介面的快捷控制存取。工具列使用指定滑動手勢展開／收合，避免普通點按誤觸。浮動控制會記住位置並在閒置後收合。</p>
+
+    <h3>Timer 與省電</h3>
+    <p>支援 3 秒／5 秒計時拍攝。Power Saving 會降低 App 顯示亮度而不是把畫面蓋黑；錄影時系統自動鎖定會依既有安全規則處理。</p>
+  </div>
+  <div class="lang-en">
+    <h2>Camera & Manual Controls</h2>
+    <h3>Shooting modes</h3>
+    <p>Honesmith Optics provides P/S/M-style manual camera control. Available settings vary with the active lens, capture format, and device capability.</p>
+    <ul>
+      <li><strong>P:</strong>Camera-managed exposure behavior for fast shooting.</li>
+      <li><strong>S:</strong>Shutter-time-led control with the available ISO/exposure controls.</li>
+      <li><strong>M:</strong>Manual exposure control.</li>
+      <li><strong>White balance:</strong>Auto/Lock and the app's existing manual white-balance controls.</li>
+      <li><strong>Physical lenses:</strong>Lens choices come from runtime camera capability. Re-selecting the active physical lens follows the existing 1.0× digital-zoom reset behavior.</li>
+    </ul>
+
+    <h3>Aspect ratios</h3>
+    <p>Photos support 4:3, 16:9, and 1:1. The live view reflects the intended composition without stretching the image.</p>
+
+    <h3>Filters</h3>
+    <p>Built-in looks include Original, B&amp;W, and Silver. They are deterministic tonal treatments of captured image data; they do not generate missing image detail.</p>
+
+    <h3>Top shortcuts & floating control</h3>
+    <p>Frequently used controls such as ratio, filter, and metering are available from the camera shortcuts. The toolbar uses its designated swipe gesture to expand/collapse, reducing accidental activation. The floating control remembers its position and collapses after inactivity.</p>
+
+    <h3>Timer & Power Saving</h3>
+    <p>3-second and 5-second timers are available. Power Saving reduces app display brightness instead of placing a black overlay over the live view. Recording uses the app's existing idle-lock safety behavior.</p>
+  </div>
+</section>
+
+<section id="focus">
+  <div class="lang-zh">
+    <h2>對焦、測光與曝光</h2>
+    <h3>AF / MF</h3>
+    <p>相機支援既有 AF、AF→MF 與 MF 工作方式。短按取景畫面設定對焦；需要精細確認時可雙擊開啟 2.2× 放大鏡，再用右側對焦輪微調。</p>
+
+    <h3>獨立 Spot Metering</h3>
+    <p><strong>長按取景畫面</strong>會設定曝光測光點。這個點與對焦點分離，因此可「對焦在 A、測光在 B」。AE 標記用來表示目前測光位置。</p>
+    <div class="callout">
+      <strong>Build 53 起的操作：</strong><br>
+      短按＝Focus · 長按＝Exposure Metering · 對焦標記上下拖曳＝EV · 雙擊＝Magnifier
+    </div>
+    <p>若你原本在 Auto Metering，明確長按放置測光點時會進入 Spot Metering。重新短按對焦不會偷偷覆寫這個明確設定的曝光點。</p>
+
+    <h3>EV</h3>
+    <p>在支援的狀態下，垂直拖曳對焦標記可快速做曝光補償。實際可調範圍由裝置與目前 session capability 決定。</p>
+  </div>
+  <div class="lang-en">
+    <h2>Focus, Metering & Exposure</h2>
+    <h3>AF / MF</h3>
+    <p>The camera keeps its AF, AF→MF, and MF workflows. Tap the viewfinder to focus. For critical focus, double-tap to open the 2.2× loupe and fine-tune with the right-side focus wheel.</p>
+
+    <h3>Independent Spot Metering</h3>
+    <p><strong>Long-press the viewfinder</strong> to place the exposure-metering point. It is independent from the focus point, so you can focus on one subject while metering another area. The AE marker indicates the active metering position.</p>
+    <div class="callout">
+      <strong>Build 53+ interaction:</strong><br>
+      Tap = Focus · Long press = Exposure Metering · Vertical focus-reticle drag = EV · Double tap = Magnifier
+    </div>
+    <p>If Auto Metering is active, explicitly placing a point by long press moves the metering behavior to Spot. A later tap-to-focus does not silently overwrite that explicit exposure point.</p>
+
+    <h3>EV</h3>
+    <p>When supported by the active state, drag the focus reticle vertically for quick exposure compensation. The actual range depends on device and current session capability.</p>
+  </div>
+</section>
+
+<section id="assist">
+  <div class="lang-zh">
+    <h2>Focus Assist</h2>
+    <p>Focus Assist 是 Pro 的取景分析工具，用來協助判讀目前選定區域的清晰度。它不會替你自動控制鏡頭對焦，也不會生成不存在的影像細節。</p>
+    <ul>
+      <li>使用單一使用者選定區域進行取景分析。</li>
+      <li>搭配亮度與原生色彩邊緣證據，提供清晰度輔助。</li>
+      <li>可與放大鏡、手動對焦輪一起使用。</li>
+      <li>使用者關閉後，後續啟動／恢復購買不應強制重新開啟。</li>
+    </ul>
+    <div class="callout warning"><strong>Peak Focus 不等於 Focus Assist。</strong>Peak Focus 與鏡頭校正屬後續擴充，不能因為看見 Focus Assist 就假設這些功能已存在。</div>
+  </div>
+  <div class="lang-en">
+    <h2>Focus Assist</h2>
+    <p>Focus Assist is a Pro viewfinder-analysis tool that helps you judge sharpness in the selected region. It does not take control of autofocus and does not generate image detail that was never captured.</p>
+    <ul>
+      <li>Analyzes a single user-selected viewfinder region.</li>
+      <li>Uses luminance and native color-edge evidence to assist focus judgment.</li>
+      <li>Works alongside the loupe and manual focus wheel.</li>
+      <li>Once you explicitly turn it off, later launches or entitlement refreshes should respect that preference.</li>
+    </ul>
+    <div class="callout warning"><strong>Peak Focus is not the same as Focus Assist.</strong>Peak Focus and lens calibration remain later expansions and must not be inferred from the presence of Focus Assist.</div>
+  </div>
+</section>
+
+<section id="raw">
+  <div class="lang-zh">
+    <h2>RAW / DNG（Pro+）</h2>
+    <div class="callout warning"><strong>適用範圍：</strong>只有當你安裝的 App 版本實際提供 Pro+ RAW、且 App 顯示有效權益與 runtime capability 時，本節才代表可操作功能。若 App 內沒有 RAW／ProRAW 入口，請視為該版本目前不可用。</div>
+    <p>在裝置與目前相機路徑支援時，Pro+ RAW 契約包含兩種 RAW 家族：</p>
+    <div class="grid">
+      <div class="card"><strong>Bayer RAW</strong>儲存為 DNG。</div>
+      <div class="card"><strong>Apple ProRAW</strong>儲存為 DNG。</div>
+    </div>
+    <h3>DNG-only 工作方式</h3>
+    <p>RAW 拍攝是一條獨立的拍攝路徑。選擇 RAW 後，成功結果是 DNG；正式流程<strong>不另外建立 HEIF／JPEG 快速副本</strong>。</p>
+    <div class="callout good">
+      <strong>RAW 不會偷偷降級。</strong><br>
+      如果要求的 RAW 無法完成，App 應回報不支援或失敗；不會把 processed HEIF／JPEG 當成 RAW 成功結果。
+    </div>
+    <h3>裝置能力</h3>
+    <p>RAW／ProRAW 是否可用依目前裝置、實體鏡頭、iOS 與 runtime camera capability 判定，不以「某一款 iPhone 一定支援」的方式保證。</p>
+    <h3>熱與連續拍攝</h3>
+    <p>RAW 處理可能比一般照片帶來更高的運算與熱負載。裝置在高熱狀態下可能限制或拒絕部分工作；這不會改變 DNG-only 的輸出契約。</p>
+  </div>
+  <div class="lang-en">
+    <h2>RAW / DNG (Pro+)</h2>
+    <div class="callout warning"><strong>Scope:</strong> This section describes an operable feature only when your installed app build actually includes Pro+ RAW and the app presents a valid entitlement plus runtime capability. If RAW/ProRAW is not shown in the app, treat it as unavailable in that build.</div>
+    <p>When supported by the device and active camera path, the Pro+ RAW contract includes two RAW families:</p>
+    <div class="grid">
+      <div class="card"><strong>Bayer RAW</strong>Saved as DNG.</div>
+      <div class="card"><strong>Apple ProRAW</strong>Saved as DNG.</div>
+    </div>
+    <h3>DNG-only workflow</h3>
+    <p>RAW capture is a separate capture path. When RAW is selected, a successful result is a DNG. The shipping workflow <strong>does not create an additional HEIF/JPEG quick companion</strong>.</p>
+    <div class="callout good">
+      <strong>RAW does not silently downgrade.</strong><br>
+      If the requested RAW capture cannot complete, the app reports unsupported/failure rather than presenting a processed HEIF/JPEG as a successful RAW result.
+    </div>
+    <h3>Device capability</h3>
+    <p>RAW/ProRAW availability is determined by the current device, physical lens, iOS version, and runtime camera capability. The app does not promise that every iPhone supports every RAW mode.</p>
+    <h3>Thermals & continuous use</h3>
+    <p>RAW may create a higher compute and thermal load than ordinary processed photos. Under high thermal pressure, the device may limit or refuse work; this does not change the DNG-only output contract.</p>
+  </div>
+</section>
+
+<section id="formats">
+  <div class="lang-zh">
+    <h2>照片格式與輸出</h2>
+    <ul>
+      <li><strong>Basic：</strong>HEIF。</li>
+      <li><strong>Pro：</strong>HEIF、JPEG 相容性輸出、PNG App 處理後無損編碼。</li>
+      <li><strong>Pro+：</strong>在支援的裝置／鏡頭上提供 Bayer RAW／Apple ProRAW → DNG。</li>
+    </ul>
+    <p>JPEG 是相容性格式，不代表畫質一定高於 HEIF。PNG 是 App 處理結果的無損編碼，不是 sensor RAW。</p>
+    <p>一般 processed photo 若套用比例或濾鏡，App 會盡量完成所選結果；無法完成時必須以可見方式處理失敗／退化，而不是假裝成功。</p>
+  </div>
+  <div class="lang-en">
+    <h2>Photo Formats & Output</h2>
+    <ul>
+      <li><strong>Basic:</strong> HEIF.</li>
+      <li><strong>Pro:</strong> HEIF, JPEG compatibility output, and PNG lossless encoding of app-processed output.</li>
+      <li><strong>Pro+:</strong> Bayer RAW / Apple ProRAW → DNG on supported device/lens paths.</li>
+    </ul>
+    <p>JPEG is provided for compatibility; it is not a claim of inherently higher quality than HEIF. PNG is lossless encoding of app-processed output, not sensor RAW.</p>
+    <p>For ordinary processed photos using an aspect ratio or filter, the app attempts to produce the selected result. If it cannot, failure/degradation must be surfaced rather than presented as a false success.</p>
+  </div>
+</section>
+
+<section id="video">
+  <div class="lang-zh">
+    <h2>影片</h2>
+    <ul>
+      <li>Basic 具備既有 1080p 錄影基線；Pro 可使用裝置實際支援的 4K 模式，包括支援時的 4K60。</li>
+      <li>音量鍵可作為錄影開始／停止控制，但在 Gallery、購買介面、系統中斷或 finalizing 等狀態會被安全阻擋。</li>
+      <li>Video Auto torch 只在實際錄影開始後運作；會依亮度條件自適應開／關，不在待機時持續點亮。</li>
+      <li>16:9 Original 使用原生錄影路徑；自訂比例或濾鏡影片走 App 處理路徑並維持方向／音訊同步。</li>
+      <li>若處理失敗，不應把不符合所選比例／濾鏡的影片默默當成成功結果。</li>
+    </ul>
+  </div>
+  <div class="lang-en">
+    <h2>Video</h2>
+    <ul>
+      <li>Basic keeps the existing 1080p recording baseline. Pro can use actual supported 4K modes, including 4K60 when the device supports it.</li>
+      <li>Volume buttons can start/stop recording, but capture input is safely blocked while Gallery, purchase UI, interruption, finalization, or similar blocking states are active.</li>
+      <li>Video Auto torch runs only after recording begins. It can switch on/off adaptively with scene brightness instead of remaining active while idle.</li>
+      <li>16:9 Original uses the native recording path. Custom ratios or filters use the app processing path while preserving orientation and audio timing.</li>
+      <li>If processing fails, the app must not silently present a video that does not match the selected ratio/filter as a success.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="floating">
+  <div class="lang-zh">
+    <h2>浮動工具列</h2>
+    <p>浮動工具列是可自訂的快速操作入口，和 iOS 系統 AssistiveTouch 無關。</p>
+    <ul>
+      <li>可在設定中啟用／停用。</li>
+      <li>可選擇要放入的動作；至少保留一個動作。</li>
+      <li>可用動作依目前 App 版本與裝置能力而定，例如快門、濾鏡、測光、Timer、暗簾／補光相關入口。</li>
+      <li>拖曳後會記住最後位置。</li>
+      <li>互動時回到完整不透明度；閒置約 1.5 秒後自動收合並回到設定的 idle opacity。</li>
+      <li>展開時會往畫面內側排列，避免按鈕直接蓋住浮動球。</li>
+    </ul>
+  </div>
+  <div class="lang-en">
+    <h2>Floating Toolbar</h2>
+    <p>The floating toolbar is a customizable quick-action surface. It is separate from iOS AssistiveTouch.</p>
+    <ul>
+      <li>Enable or disable it in settings.</li>
+      <li>Choose which actions are present; at least one action remains enabled.</li>
+      <li>Available actions depend on the installed app version and device capability, and can include capture, filter, metering, timer, dark-curtain/light-related actions.</li>
+      <li>The last dragged position is remembered.</li>
+      <li>Interaction returns it to full opacity; after about 1.5 seconds of inactivity it collapses and returns to the configured idle opacity.</li>
+      <li>Expanded actions are placed inward from the screen edge so they do not sit directly on top of the floating ball.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="memory">
+  <div class="lang-zh">
+    <h2>Memory（拍攝記憶）</h2>
+    <p>Memory 只保存一組明確限定的照片設定，不是完整相機狀態快照。</p>
+    <div class="grid">
+      <div class="card"><strong>會保存</strong>EV、對焦控制模式（AF／AF→MF／MF）、白平衡、照片比例、照片濾鏡。</div>
+      <div class="card"><strong>不會保存</strong>對焦距離、對焦點、數位變焦、測光點、鏡頭選擇、快門、ISO、影片設定。</div>
+    </div>
+    <h3>套用與 quick reset</h3>
+    <ul>
+      <li>套用 Memory 後，五項受管理設定會套用到目前拍攝狀態。</li>
+      <li>若修改其中任一項，該 Memory 不再視為目前完全吻合。</li>
+      <li>在仍吻合時再次點選 active Memory，會退出 active 狀態並快速重設這五項：EV 0.0、continuous AF、Auto WB、4:3、Original。</li>
+      <li>Quick reset 不會改寫已儲存的 Memory 本身；之後仍可重新套用原本保存的內容。</li>
+    </ul>
+  </div>
+  <div class="lang-en">
+    <h2>Memory</h2>
+    <p>Memory stores a deliberately limited photo setup. It is not a snapshot of the entire camera state.</p>
+    <div class="grid">
+      <div class="card"><strong>Stored</strong>EV, focus-control mode (AF / AF→MF / MF), white balance, photo aspect ratio, and photo filter.</div>
+      <div class="card"><strong>Not stored</strong>Focus distance, focus point, digital zoom, metering point, lens choice, shutter, ISO, or video settings.</div>
+    </div>
+    <h3>Apply & quick reset</h3>
+    <ul>
+      <li>Applying a Memory applies the five managed values to the current photo setup.</li>
+      <li>Changing any one of those five values means the active setup no longer fully matches that Memory.</li>
+      <li>While it still matches, tapping the active Memory again exits the active state and quickly resets those five values to EV 0.0, continuous AF, Auto WB, 4:3, and Original.</li>
+      <li>Quick reset does not overwrite the saved Memory itself; the saved setup can still be applied again later.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="gallery">
+  <div class="lang-zh">
+    <h2>圖庫</h2>
+    <p>App 內 Gallery 顯示你授權存取的 Apple Photos 項目。</p>
+    <ul>
+      <li>照片：fit、縮放、雙擊 zoom、放大後平移；fit 狀態可左右換頁。</li>
+      <li>影片：播放／暫停、進度拖曳、離開頁面時停止播放。</li>
+      <li>支援 Photos Full Access 與 Limited Access。</li>
+      <li>刪除使用 iOS 系統提供的 destructive confirmation；App 不再重複疊一個自製確認框。</li>
+      <li>iCloud Photos 等 Apple 服務仍由 Apple 與你的系統設定管理。</li>
+    </ul>
+  </div>
+  <div class="lang-en">
+    <h2>Gallery</h2>
+    <p>The in-app Gallery displays Apple Photos items you have authorized the app to access.</p>
+    <ul>
+      <li>Photos: fit, zoom, double-tap zoom, pan while zoomed, and horizontal paging at fit scale.</li>
+      <li>Videos: play/pause, scrub, and stop playback when leaving the item.</li>
+      <li>Supports Photos Full Access and Limited Access.</li>
+      <li>Deletion uses the destructive confirmation supplied by iOS; the app does not add a second duplicate confirmation dialog.</li>
+      <li>Apple services such as iCloud Photos remain managed by Apple and your system settings.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="profiles">
+  <div class="lang-zh">
+    <h2>Profile、Recipe 與外接鏡</h2>
+    <p>你可以使用既有 Profile／Recipe 工作流程保存拍攝設定，並管理外接鏡 Profile。實際可套用的相機能力仍以當下實體鏡頭與裝置 capability 為準。</p>
+    <p>舊資料若仍保存過去版本使用的 RAW companion 欄位，只作相容性讀取，不會重新啟用已退役的 RAW companion 拍攝行為。</p>
+  </div>
+  <div class="lang-en">
+    <h2>Profiles, Recipes & External Lenses</h2>
+    <p>Use the existing Profile/Recipe workflows to save shooting settings and manage external-lens profiles. Actual camera capability still depends on the current physical lens and device.</p>
+    <p>If legacy data still contains historical RAW-companion fields, they are compatibility-only and do not reactivate the retired RAW-companion capture behavior.</p>
+  </div>
+</section>
+
+<section id="tiers">
+  <div class="lang-zh">
+    <h2>Basic / Pro / Pro+</h2>
+    <div class="grid">
+      <div class="card">
+        <strong>Basic</strong>
+        手動相機基礎、曝光／對焦／白平衡、構圖、Gallery、Profile／Recipe、內建濾鏡、語言、診斷與本機儲存。
+      </div>
+      <div class="card">
+        <strong>Pro</strong>
+        依硬體能力的 Ultra High、支援的 4K 模式、Focus Assist、JPEG、PNG、Pro Custom Style／預設，以及 Restore Purchases。
+      </div>
+      <div class="card">
+        <strong>Pro+</strong>
+        RAW／DNG：支援時提供 Bayer RAW 與 Apple ProRAW 的 DNG 工作流程。權益與硬體能力分開判定。
+      </div>
+      <div class="card">
+        <strong>後續擴充</strong>
+        Peak Focus 與鏡頭校正不是本說明所宣告的既有 Build 53 核心功能；除非未來版本正式推出，請勿視為目前可用。
+      </div>
+    </div>
+    <p class="small">所有付費能力都需要有效且已驗證的 App Store entitlement；購買不會創造裝置本身沒有的鏡頭、解析度、frame rate 或 RAW capability。</p>
+  </div>
+  <div class="lang-en">
+    <h2>Basic / Pro / Pro+</h2>
+    <div class="grid">
+      <div class="card">
+        <strong>Basic</strong>
+        Manual-camera baseline, exposure/focus/white balance, composition, Gallery, Profiles/Recipes, built-in filters, language, diagnostics, and local media saving.
+      </div>
+      <div class="card">
+        <strong>Pro</strong>
+        Capability-dependent Ultra High, supported 4K modes, Focus Assist, JPEG, PNG, Pro Custom Style/presets, and Restore Purchases.
+      </div>
+      <div class="card">
+        <strong>Pro+</strong>
+        In an <strong>app build that actually includes Pro+ RAW</strong>, supported paths can provide Bayer RAW and Apple ProRAW DNG workflows. Purchase/availability follows the products shown by the app, valid entitlement, and hardware capability.
+      </div>
+      <div class="card">
+        <strong>Later expansions</strong>
+        Peak Focus and lens calibration are not declared here as existing Build 53 core features. Do not treat them as currently available unless a future release explicitly ships them.
+      </div>
+    </div>
+    <p class="small">Paid capabilities require a valid verified App Store entitlement. A purchase cannot create a lens, resolution, frame rate, or RAW capability that the device itself does not provide.</p>
+  </div>
+</section>
+
+<section id="diagnostics">
+  <div class="lang-zh">
+    <h2>診斷</h2>
+    <p>診斷用來協助確認 App 狀態與問題，不是背景追蹤服務。</p>
+    <ul>
+      <li>診斷在本機建立，且不會自動上傳。</li>
+      <li>只有你主動產生／匯出後，才會透過你選擇的 iOS 分享目的地離開裝置。</li>
+      <li>正式診斷不得包含照片／影片內容、RAW 媒體內容、ROI／測光座標、持續性裝置或帳號識別、位置、聯絡人、付款資訊、IP／SSID、絕對檔案路徑或檔名。</li>
+      <li>可包含 App 版本／Build、粗粒度相機角色、設定／狀態摘要、有限的 Focus Assist 狀態、近期測光／RAW 儲存結果摘要、thermal state 與隨機 per-report ID。</li>
+    </ul>
+    <div class="callout good">如果需要回報問題，優先使用 App 正式匯出的去識別診斷，而不是自行貼出完整系統日誌、照片或其他可能含個資的內容。</div>
+  </div>
+  <div class="lang-en">
+    <h2>Diagnostics</h2>
+    <p>Diagnostics help describe app state and problems. They are not a background tracking service.</p>
+    <ul>
+      <li>Diagnostic reports are created locally and are not uploaded automatically.</li>
+      <li>They leave the device only after you explicitly generate/export them through an iOS destination you choose.</li>
+      <li>Shipping diagnostics must not contain photo/video content, RAW media content, ROI/metering coordinates, persistent device/account identifiers, location, contacts, payment data, IP/SSID, absolute file paths, or filenames.</li>
+      <li>They may contain app version/build, coarse camera role, settings/state summaries, bounded Focus Assist state, recent metering/RAW persistence outcome summaries, thermal state, and a random per-report ID.</li>
+    </ul>
+    <div class="callout good">When reporting an issue, prefer the app's official de-identified diagnostic export instead of sharing full system logs, photos, or other material that may contain personal information.</div>
+  </div>
+</section>
+
+<section id="privacy">
+  <div class="lang-zh">
+    <h2>隱私、權限與網路</h2>
+    <h3>本機運作</h3>
+    <p>核心相機、圖庫、編輯、設定與診斷以本機運作為原則，不需要 Honesmith 帳號或 Honesmith 雲端照片處理服務。</p>
+    <ul>
+      <li>不設 Honesmith 帳號系統。</li>
+      <li>不使用廣告或分析 SDK。</li>
+      <li>不自動上傳你的照片、影片、RAW 或診斷。</li>
+      <li>診斷只有在你主動產生／匯出時才會透過你選擇的 iOS 分享流程離開裝置。</li>
+    </ul>
+    <h3>系統權限</h3>
+    <ul>
+      <li><strong>Camera：</strong>取景與拍攝。</li>
+      <li><strong>Microphone：</strong>只有錄製含聲音的影片時使用。</li>
+      <li><strong>Photos：</strong>保存 App 產生的媒體，以及顯示你授權 Gallery 存取的照片／影片。</li>
+    </ul>
+    <h3>哪些情況會需要網路？</h3>
+    <p>App Store 商品載入、購買／恢復購買、Apple 管理的媒體服務，以及<strong>這份線上完整說明</strong>可能需要網路。這不代表你的照片會上傳到 Honesmith Studio。</p>
+  </div>
+  <div class="lang-en">
+    <h2>Privacy, Permissions & Network</h2>
+    <h3>Local operation</h3>
+    <p>Core camera, Gallery, editing, settings, and diagnostics are designed to operate locally, without a Honesmith account or Honesmith cloud photo-processing service.</p>
+    <ul>
+      <li>No Honesmith account system.</li>
+      <li>No advertising or analytics SDK.</li>
+      <li>No automatic upload of your photos, videos, RAW media, or diagnostics.</li>
+      <li>Diagnostics leave the device only when you explicitly export/share them through an iOS destination you choose.</li>
+    </ul>
+    <h3>System permissions</h3>
+    <ul>
+      <li><strong>Camera:</strong>Live preview and capture.</li>
+      <li><strong>Microphone:</strong>Used only when recording video with audio.</li>
+      <li><strong>Photos:</strong>Save app-created media and display photos/videos you authorize the in-app Gallery to access.</li>
+    </ul>
+    <h3>When is a network connection needed?</h3>
+    <p>App Store product loading, purchases/restores, Apple-managed media services, and <strong>this online complete guide</strong> may require a connection. This does not mean your photos are uploaded to Honesmith Studio.</p>
+  </div>
+</section>
+
+<section id="troubleshooting">
+  <div class="lang-zh">
+    <h2>常見問題</h2>
+    <h3>為什麼我看不到 RAW 或 ProRAW？</h3>
+    <p>先確認 Pro+ 權益，再確認目前 iPhone、實體鏡頭與相機 session 是否支援該 RAW family。功能不以機型名稱硬開。</p>
+
+    <h3>為什麼 RAW 沒有附一張 JPEG／HEIF？</h3>
+    <p>這是預期行為。現行 RAW 工作流程是 DNG-only，quick companion 已正式退役。</p>
+
+    <h3>長按畫面後為什麼出現 AE 標記？</h3>
+    <p>長按是獨立曝光測光操作。短按仍是對焦；兩者故意分離。</p>
+
+    <h3>購買 Pro/Pro+ 後，為什麼某些選項仍不可用？</h3>
+    <p>付費 entitlement 與硬體 capability 分開。裝置或目前鏡頭不支援的能力，不會因購買而被假裝解鎖。</p>
+
+    <h3>為什麼線上說明打不開？</h3>
+    <p>完整說明頁需要網路。如果 App 版本提供本機 fallback，離線時會顯示隨 App 內建的最後已知說明。</p>
+  </div>
+  <div class="lang-en">
+    <h2>Troubleshooting</h2>
+    <h3>Why don't I see RAW or ProRAW?</h3>
+    <p>Check the Pro+ entitlement first, then the current iPhone, physical lens, and camera-session capability for that RAW family. Modes are not enabled by hard-coded model name.</p>
+
+    <h3>Why is there no JPEG/HEIF next to my RAW file?</h3>
+    <p>This is expected. The current RAW workflow is DNG-only; the quick companion has been retired.</p>
+
+    <h3>Why does an AE marker appear after a long press?</h3>
+    <p>Long press is the independent exposure-metering action. A normal tap still focuses; the two are intentionally separate.</p>
+
+    <h3>Why is a feature unavailable even after purchasing Pro/Pro+?</h3>
+    <p>Paid entitlement and hardware capability are separate. A capability the active device/lens does not support is not faked into availability by a purchase.</p>
+
+    <h3>Why won't the online guide load?</h3>
+    <p>The complete online guide requires a network connection. If your app version includes a local fallback, it can show the last bundled guide while offline.</p>
+  </div>
+</section>
+
+<section id="about">
+  <div class="lang-zh">
+    <h2>關於本說明</h2>
+    <p>這份頁面是 Honesmith Optics 的線上完整說明，可在不改變 App 功能的前提下更新文字、補充操作範例與修正說明。它採「文件版本與 App binary 分離」設計，因此公開頁面本身不作為 storefront release、IAP availability 或功能啟用的證據。</p>
+    <div class="callout warning">
+      <strong>文件不會創造功能。</strong><br>
+      若此頁與你手機上的實際 App 版本有差異，應以該 App 版本實際存在的功能與 App Store 當下可用權益為準。尚未正式出貨的功能不應僅因本頁更新而被視為可用。
+    </div>
+  </div>
+  <div class="lang-en">
+    <h2>About this guide</h2>
+    <p>This page is the online complete guide for Honesmith Optics. Text, examples, and corrections may be updated without changing app functionality. Documentation is versioned independently from the app binary, so the public page itself is not evidence of storefront release, IAP availability, or feature activation.</p>
+    <div class="callout warning">
+      <strong>Documentation does not create functionality.</strong><br>
+      If this page differs from the app version installed on your device, the functionality actually present in that app build and the entitlements currently available through the App Store take precedence. A feature is not considered shipped merely because this page mentions it.
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <strong>Honesmith Optics</strong> · Honesmith Studio<br>
+    <span class="lang-zh">線上完整使用說明 · 更新：2026-08-13</span>
+    <span class="lang-en">Online Complete User Guide · Updated: 2026-08-13</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  const body = document.body;
+  const zh = document.getElementById('zhBtn');
+  const en = document.getElementById('enBtn');
+
+  function setLang(lang){
+    const isEn = lang === 'en';
+    body.classList.toggle('en', isEn);
+    document.documentElement.lang = isEn ? 'en' : 'zh-Hant';
+    zh.classList.toggle('active', !isEn);
+    en.classList.toggle('active', isEn);
+    zh.setAttribute('aria-pressed', String(!isEn));
+    en.setAttribute('aria-pressed', String(isEn));
+    try { localStorage.setItem('honesmithHelpLanguage', lang); } catch(e) {}
+  }
+
+  let saved = null;
+  try { saved = localStorage.getItem('honesmithHelpLanguage'); } catch(e) {}
+  if(saved === 'en' || saved === 'zh-Hant'){
+    setLang(saved);
+  } else if((navigator.language || '').toLowerCase().startsWith('en')){
+    setLang('en');
+  } else {
+    setLang('zh-Hant');
+  }
+
+  zh.addEventListener('click', () => setLang('zh-Hant'));
+  en.addEventListener('click', () => setLang('en'));
+})();
+</script>
+</body>
+</html>
