@@ -262,6 +262,10 @@
       短按＝Focus · 長按＝Exposure Metering · 對焦標記上下拖曳＝EV · 雙擊＝Magnifier
     </div>
     <p>若你原本在 Auto Metering，明確長按放置測光點時會進入 Spot Metering。重新短按對焦不會偷偷覆寫這個明確設定的曝光點。</p>
+    <p class="small"><strong>操作契約：</strong>短按決定 AF/MF 對焦位置，長按決定 AE 測光位置。</p>
+
+    <h3>Zone Metering</h3>
+    <p>使用分區測光時，長按預覽後，<strong>測光點會吸附至九宮格中最接近的區域中心</strong>。這是測光位置的吸附規則，不代表 App 對整個區域做自行推測的平均曝光。</p>
 
     <h3>EV</h3>
     <p>在支援的狀態下，垂直拖曳對焦標記可快速做曝光補償。實際可調範圍由裝置與目前 session capability 決定。</p>
@@ -278,6 +282,10 @@
       Tap = Focus · Long press = Exposure Metering · Vertical focus-reticle drag = EV · Double tap = Magnifier
     </div>
     <p>If Auto Metering is active, explicitly placing a point by long press moves the metering behavior to Spot. A later tap-to-focus does not silently overwrite that explicit exposure point.</p>
+    <p class="small"><strong>Interaction contract:</strong> short tap chooses AF/MF focus, long press chooses AE metering.</p>
+
+    <h3>Zone Metering</h3>
+    <p>With Zone Metering, a long press snaps the metering point to the nearest center of the 3×3 grid. This is a metering-position snap rule, not a claim that the app invents or estimates exposure from an entire zone.</p>
 
     <h3>EV</h3>
     <p>When supported by the active state, drag the focus reticle vertically for quick exposure compensation. The actual range depends on device and current session capability.</p>
@@ -319,7 +327,7 @@
       <div class="card"><strong>Apple ProRAW</strong>儲存為 DNG。</div>
     </div>
     <h3>DNG-only 工作方式</h3>
-    <p>RAW 拍攝是一條獨立的拍攝路徑。選擇 RAW 後，成功結果是 DNG；正式流程<strong>不另外建立 HEIF／JPEG 快速副本</strong>。</p>
+    <p><strong>RAW 模式只儲存 DNG。</strong>RAW 拍攝是一條獨立的拍攝路徑。選擇 RAW 後，成功結果是 DNG；正式流程<strong>不另外建立 HEIF／JPEG 快速副本</strong>。</p>
     <div class="callout good">
       <strong>RAW 不會偷偷降級。</strong><br>
       如果要求的 RAW 無法完成，App 應回報不支援或失敗；不會把 processed HEIF／JPEG 當成 RAW 成功結果。
@@ -338,7 +346,7 @@
       <div class="card"><strong>Apple ProRAW</strong>Saved as DNG.</div>
     </div>
     <h3>DNG-only workflow</h3>
-    <p>RAW capture is a separate capture path. When RAW is selected, a successful result is a DNG. The shipping workflow <strong>does not create an additional HEIF/JPEG quick companion</strong>.</p>
+    <p><strong>RAW capture stores the DNG only.</strong> RAW capture is a separate capture path. When RAW is selected, a successful result is a DNG. The shipping workflow <strong>does not create an additional HEIF/JPEG quick companion</strong>.</p>
     <div class="callout good">
       <strong>RAW does not silently downgrade.</strong><br>
       If the requested RAW capture cannot complete, the app reports unsupported/failure rather than presenting a processed HEIF/JPEG as a successful RAW result.
